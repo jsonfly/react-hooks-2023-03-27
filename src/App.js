@@ -1,22 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Countries from './components/Countries';
+import { useState } from 'react';
 
 function App() {
+  const [lang, setLang] = useState("spanish")
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <nav>
+          <button onClick={() => setLang('english')}>Angol</button>
+          <button onClick={() => setLang('spanish')}>Spanyol</button>
+          <button onClick={() => setLang('german')}>Német</button>
+        </nav>
+        <Countries lang={lang} />
       </header>
     </div>
   );
